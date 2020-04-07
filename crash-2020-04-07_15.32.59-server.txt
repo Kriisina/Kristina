@@ -1,0 +1,43 @@
+---- Minecraft Crash Report ----
+// I bet Cylons wouldn't have this problem.
+
+Time: 7/4/20 15:32
+Description: Exception in server tick loop
+
+java.lang.ExceptionInInitializerError: null
+	at net.minecraftforge.fml.ModLoader.<init>(ModLoader.java:121) ~[?:?] {re:classloading}
+	at net.minecraftforge.fml.ModLoader.get(ModLoader.java:146) ~[?:?] {re:classloading}
+	at net.minecraftforge.fml.server.ServerModLoader.begin(ServerModLoader.java:45) ~[?:?] {re:classloading}
+	at net.minecraft.server.dedicated.DedicatedServer.func_71197_b(DedicatedServer.java:122) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:611) [?:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at java.lang.Thread.run(Thread.java:830) [?:?] {}
+Caused by: java.lang.IllegalStateException: Failed to resolve consumer event type: net.minecraftforge.fml.network.simple.SimpleChannel$$Lambda$2578/0x00000008013f9440@51aae12
+	at net.minecraftforge.eventbus.EventBus.addListener(EventBus.java:194) ~[eventbus-2.0.0-milestone.1-service.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.addListener(EventBus.java:161) ~[eventbus-2.0.0-milestone.1-service.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.addListener(EventBus.java:156) ~[eventbus-2.0.0-milestone.1-service.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.addListener(EventBus.java:151) ~[eventbus-2.0.0-milestone.1-service.jar:?] {}
+	at net.minecraftforge.fml.network.NetworkInstance.addListener(NetworkInstance.java:65) ~[?:?] {re:classloading}
+	at net.minecraftforge.fml.network.simple.SimpleChannel.<init>(SimpleChannel.java:56) ~[?:?] {re:classloading}
+	at net.minecraftforge.fml.network.simple.SimpleChannel.<init>(SimpleChannel.java:49) ~[?:?] {re:classloading}
+	at net.minecraftforge.fml.network.NetworkRegistry$ChannelBuilder.simpleChannel(NetworkRegistry.java:409) ~[?:?] {re:classloading}
+	at net.minecraftforge.fml.network.NetworkInitialization.getHandshakeChannel(NetworkInitialization.java:38) ~[?:?] {re:classloading}
+	at net.minecraftforge.fml.network.FMLNetworkConstants.<clinit>(FMLNetworkConstants.java:48) ~[?:?] {re:classloading}
+	... 6 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.15.2
+	Minecraft Version ID: 1.15.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 13.0.2, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode, sharing), Oracle Corporation
+	Memory: 3398131200 bytes (3240 MB) / 4294967296 bytes (4096 MB) up to 4294967296 bytes (4096 MB)
+	CPUs: 4
+	JVM Flags: 2 total; -Xmx4096M -Xms4096M
+	Data Packs: 
+	Is Modded: Definitely; Server brand changed to 'forge'
+	Type: Dedicated Server (map_server.txt)
